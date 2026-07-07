@@ -69,11 +69,29 @@ erDiagram
         int alert_id PK
         int debt_id FK
         int schedule_id FK
+        int recipient_id FK
         varchar alert_type
         date due_date
+        varchar contact_method
+        varchar delivery_status
+        text message
         timestamp sent_at
+        int retry_count
+        text error_message
+        timestamp last_retry_at
         varchar status
         timestamp created_at
+    }
+
+    notification_preferences {
+        int preference_id PK
+        int user_id FK
+        varchar alert_type
+        boolean enabled
+        varchar preferred_contact
+        int days_before_due
+        timestamp created_at
+        timestamp updated_at
     }
 
     lenders       ||--o{ debts                : "lends to"
@@ -85,6 +103,8 @@ erDiagram
     payments      ||--o{ payment_allocations  : "split into"
     interest_schedule ||--o{ payment_allocations : "settled by"
     interest_schedule ||--o{ alerts           : "alerts for"
+users         ||--o{ notification_preferences : "has"
+    alerts        ||--o{ notification_preferences : "uses"
 ```
 
 ## Relationship Notes
@@ -100,3 +120,5 @@ erDiagram
 | interest_schedule → payment_allocations | one-to-many | A schedule period can be partially paid across multiple payments |
 | debts → alerts | one-to-many | Multiple alert types per debt (due soon, overdue, milestone) |
 | interest_schedule → alerts | one-to-many | Alerts tied to specific interest due dates |
+| alerts → notification_preferences | one-to-many | Alerts configured based on user notification preferences |
+| notification_preferences → users | many-to-one | Each preference belongs to one user |
