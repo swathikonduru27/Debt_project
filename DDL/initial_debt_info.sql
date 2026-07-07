@@ -1,9 +1,9 @@
-create table initial_debt_info(
-Debt_id int primary key,
-Name varchar,
-Amount float,
-Interest_rate float,
-Date_of_debt date,
-Interest_frequency varchar,
-last_updated timestamp
+CREATE TABLE finances.initial_debt_info (
+    debt_id INT PRIMARY KEY,
+    name VARCHAR(100),
+    amount DECIMAL(12, 2),
+    interest_rate DECIMAL(5, 2),
+    date_of_debt DATE,
+    interest_frequency VARCHAR(20),
+    last_updated TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );

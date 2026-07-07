@@ -6,18 +6,17 @@
 -- ============================================================================
 
 CREATE TABLE finances.notification_preferences (
-    preference_id INT PRIMARY KEY AUTO_INCREMENT,
+    preference_id SERIAL PRIMARY KEY,
     user_id INT NOT NULL,
-    alert_type VARCHAR(50) NOT NULL COMMENT 'due_soon, overdue, milestone, etc.',
-    enabled BOOLEAN DEFAULT TRUE COMMENT 'User wants this type of alert',
-    preferred_contact VARCHAR(20) NOT NULL COMMENT 'email, sms, phone',
-    days_before_due INT DEFAULT 7 COMMENT 'How many days before due date to send alert',
+    alert_type VARCHAR(50) NOT NULL,
+    enabled BOOLEAN DEFAULT TRUE,
+    preferred_contact VARCHAR(20) NOT NULL,
+    days_before_due INT DEFAULT 7,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES finances.users(user_id),
-
-    INDEX idx_user (user_id),
-    INDEX idx_alert_type (alert_type),
-    UNIQUE KEY unique_user_alert (user_id, alert_type, preferred_contact)
+    UNIQUE (user_id, alert_type, preferred_contact)
 );
+
+CREATE INDEX idx_user ON finances.notification_preferences(user_id);
+CREATE INDEX idx_alert_type ON finances.notification_preferences(alert_type);

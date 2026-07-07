@@ -6,30 +6,29 @@
 -- ============================================================================
 
 CREATE TABLE finances.alerts (
-    alert_id INT PRIMARY KEY AUTO_INCREMENT,
+    alert_id SERIAL PRIMARY KEY,
     debt_id INT NOT NULL,
     schedule_id INT,
     recipient_id INT NOT NULL,
-    alert_type VARCHAR(50) NOT NULL COMMENT 'due_soon, overdue, milestone, etc.',
+    alert_type VARCHAR(50) NOT NULL,
     due_date DATE NOT NULL,
-    contact_method VARCHAR(20) COMMENT 'email, sms, phone',
-    delivery_status VARCHAR(20) DEFAULT 'pending' COMMENT 'pending, sent, failed, delivered',
+    contact_method VARCHAR(20),
+    delivery_status VARCHAR(20) DEFAULT 'pending',
     message TEXT,
-    sent_at TIMESTAMP NULL,
+    sent_at TIMESTAMP,
     retry_count INT DEFAULT 0,
     error_message TEXT,
-    last_retry_at TIMESTAMP NULL,
-    status VARCHAR(20) DEFAULT 'pending' COMMENT 'pending, acknowledged, resolved',
+    last_retry_at TIMESTAMP,
+    status VARCHAR(20) DEFAULT 'pending',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-
     FOREIGN KEY (debt_id) REFERENCES finances.debts(debt_id),
     FOREIGN KEY (schedule_id) REFERENCES finances.interest_schedule(schedule_id),
-    FOREIGN KEY (recipient_id) REFERENCES finances.users(user_id),
-
-    INDEX idx_debt (debt_id),
-    INDEX idx_recipient (recipient_id),
-    INDEX idx_alert_type (alert_type),
-    INDEX idx_delivery_status (delivery_status),
-    INDEX idx_due_date (due_date),
-    INDEX idx_created_at (created_at)
+    FOREIGN KEY (recipient_id) REFERENCES finances.users(user_id)
 );
+
+CREATE INDEX idx_debt ON finances.alerts(debt_id);
+CREATE INDEX idx_recipient ON finances.alerts(recipient_id);
+CREATE INDEX idx_alert_type ON finances.alerts(alert_type);
+CREATE INDEX idx_delivery_status ON finances.alerts(delivery_status);
+CREATE INDEX idx_due_date ON finances.alerts(due_date);
+CREATE INDEX idx_created_at ON finances.alerts(created_at);
