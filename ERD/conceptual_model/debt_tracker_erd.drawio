@@ -1,0 +1,93 @@
+<mxfile host="65bd71144e">
+    <diagram id="conceptual_erd" name="Conceptual Model">
+        <mxGraphModel dx="224" dy="313" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="900" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="E_users" value="USERS" style="shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=14;fontStyle=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="50" y="50" width="120" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="E_users_text" value="Family members" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="50" y="135" width="120" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="E_lenders" value="LENDERS" style="shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=14;fontStyle=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="350" y="50" width="120" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="E_lenders_text" value="Creditors" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="350" y="135" width="120" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="E_debts" value="DEBTS" style="shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=14;fontStyle=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=3;" parent="1" vertex="1">
+                    <mxGeometry x="180" y="250" width="100" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="E_debts_text" value="Loan agreements" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="200" y="335" width="120" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="E_interest_sch" value="INTEREST&#xa;SCHEDULES" style="shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=12;fontStyle=1;fillColor=#ffe6cc;strokeColor=#d79b00;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="450" y="250" width="120" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="E_interest_sch_text" value="Time periods" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="450" y="335" width="120" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="E_payments" value="PAYMENTS" style="shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=14;fontStyle=1;fillColor=#e1d5ff;strokeColor=#9673a6;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="50" y="450" width="120" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="E_payments_text" value="Transactions" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="50" y="535" width="120" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="E_pay_alloc" value="PAYMENT&#xa;ALLOCATIONS" style="shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=12;fontStyle=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="200" y="450" width="120" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="E_pay_alloc_text" value="Splits payments" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="200" y="535" width="120" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="E_alerts" value="ALERTS" style="shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=14;fontStyle=1;fillColor=#f0a30a;strokeColor=#BD7000;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="350" y="450" width="120" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="E_alerts_text" value="Notifications" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="350" y="535" width="120" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="E_notif_prefs" value="NOTIFICATION&#xa;PREFERENCES" style="shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=12;fontStyle=1;fillColor=#e1d5ff;strokeColor=#9673a6;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="650" y="250" width="120" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="E_notif_prefs_text" value="User settings" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="650" y="335" width="120" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="R1" value="borrows" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;endArrow=ERmany;startArrow=ERone;" parent="1" source="E_users" target="E_debts" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="R2" value="lends" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;endArrow=ERmany;startArrow=ERone;" parent="1" source="E_lenders" target="E_debts" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="R3" value="generates" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;endArrow=ERmany;startArrow=ERone;" parent="1" source="E_debts" target="E_interest_sch" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="R4" value="receives" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;endArrow=ERmany;startArrow=ERone;" parent="1" source="E_debts" target="E_payments" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="R5" value="make" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;endArrow=ERmany;startArrow=ERone;" parent="1" source="E_users" target="E_payments" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="R6" value="splits into" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;endArrow=ERmany;startArrow=ERone;" parent="1" source="E_payments" target="E_pay_alloc" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="R7" value="settled by" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;endArrow=ERmany;startArrow=ERone;" parent="1" source="E_interest_sch" target="E_pay_alloc" edge="1">
+                    <mxGeometry x="-0.0857" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="R8" value="triggers" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;endArrow=ERmany;startArrow=ERone;" parent="1" source="E_debts" target="E_alerts" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="R9" value="triggers" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;endArrow=ERmany;startArrow=ERone;" parent="1" source="E_interest_sch" target="E_alerts" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="R10" value="configure" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;endArrow=ERmany;startArrow=ERone;" parent="1" source="E_users" target="E_notif_prefs" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="R11" value="uses" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;endArrow=ERmany;startArrow=ERone;" parent="1" source="E_alerts" target="E_notif_prefs" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
