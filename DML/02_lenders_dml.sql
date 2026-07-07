@@ -2,7 +2,7 @@
 -- LENDERS DML - Insert Lenders
 -- ============================================================================
 
-INSERT INTO lenders (name, email, phone, relationship_type, created_at) VALUES
+INSERT INTO finances.lenders (name, email, phone, relationship_type, created_at) VALUES
 ('Sandeep', NULL, NULL, 'Family Friend', NOW()),
 ('Lokesh Friend', NULL, NULL, 'Friend', NOW()),
 ('Aravindha', NULL, NULL, 'Family Friend', NOW()),

@@ -5,7 +5,7 @@
 -- Breaks down when interest is due (monthly, quarterly, etc.)
 -- ============================================================================
 
-CREATE TABLE interest_schedule (
+CREATE TABLE finances.interest_schedule (
     schedule_id INT PRIMARY KEY AUTO_INCREMENT,
     debt_id INT NOT NULL,
     period_number INT NOT NULL COMMENT 'Sequential number (1, 2, 3, ...)',
@@ -16,7 +16,7 @@ CREATE TABLE interest_schedule (
     status VARCHAR(20) DEFAULT 'pending' COMMENT 'pending, paid, partial, overdue',
     last_updated TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 
-    FOREIGN KEY (debt_id) REFERENCES debts(debt_id),
+    FOREIGN KEY (debt_id) REFERENCES finances.debts(debt_id),
 
     INDEX idx_debt (debt_id),
     INDEX idx_status (status),

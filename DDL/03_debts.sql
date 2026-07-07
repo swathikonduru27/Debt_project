@@ -5,7 +5,7 @@
 -- Core business entity - tracks principal, interest, and repayment status
 -- ============================================================================
 
-CREATE TABLE debts (
+CREATE TABLE finances.debts (
     debt_id INT PRIMARY KEY AUTO_INCREMENT,
     lender_id INT NOT NULL,
     borrower_id INT NOT NULL,
@@ -19,8 +19,8 @@ CREATE TABLE debts (
     notes TEXT,
     last_updated TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 
-    FOREIGN KEY (lender_id) REFERENCES lenders(lender_id),
-    FOREIGN KEY (borrower_id) REFERENCES users(user_id),
+    FOREIGN KEY (lender_id) REFERENCES finances.lenders(lender_id),
+    FOREIGN KEY (borrower_id) REFERENCES finances.users(user_id),
 
     INDEX idx_lender (lender_id),
     INDEX idx_borrower (borrower_id),

@@ -5,7 +5,7 @@
 -- Reminders sent to users based on their preferences
 -- ============================================================================
 
-CREATE TABLE alerts (
+CREATE TABLE finances.alerts (
     alert_id INT PRIMARY KEY AUTO_INCREMENT,
     debt_id INT NOT NULL,
     schedule_id INT,
@@ -22,9 +22,9 @@ CREATE TABLE alerts (
     status VARCHAR(20) DEFAULT 'pending' COMMENT 'pending, acknowledged, resolved',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 
-    FOREIGN KEY (debt_id) REFERENCES debts(debt_id),
-    FOREIGN KEY (schedule_id) REFERENCES interest_schedule(schedule_id),
-    FOREIGN KEY (recipient_id) REFERENCES users(user_id),
+    FOREIGN KEY (debt_id) REFERENCES finances.debts(debt_id),
+    FOREIGN KEY (schedule_id) REFERENCES finances.interest_schedule(schedule_id),
+    FOREIGN KEY (recipient_id) REFERENCES finances.users(user_id),
 
     INDEX idx_debt (debt_id),
     INDEX idx_recipient (recipient_id),

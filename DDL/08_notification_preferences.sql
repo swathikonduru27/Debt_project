@@ -5,7 +5,7 @@
 -- Controls what alerts they receive, when, and how (email/SMS/phone)
 -- ============================================================================
 
-CREATE TABLE notification_preferences (
+CREATE TABLE finances.notification_preferences (
     preference_id INT PRIMARY KEY AUTO_INCREMENT,
     user_id INT NOT NULL,
     alert_type VARCHAR(50) NOT NULL COMMENT 'due_soon, overdue, milestone, etc.',
@@ -15,7 +15,7 @@ CREATE TABLE notification_preferences (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 
-    FOREIGN KEY (user_id) REFERENCES users(user_id),
+    FOREIGN KEY (user_id) REFERENCES finances.users(user_id),
 
     INDEX idx_user (user_id),
     INDEX idx_alert_type (alert_type),

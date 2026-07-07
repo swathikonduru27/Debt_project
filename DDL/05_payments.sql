@@ -5,7 +5,7 @@
 -- Records of money transferred by users
 -- ============================================================================
 
-CREATE TABLE payments (
+CREATE TABLE finances.payments (
     payment_id INT PRIMARY KEY AUTO_INCREMENT,
     debt_id INT NOT NULL,
     paid_by INT NOT NULL,
@@ -14,8 +14,8 @@ CREATE TABLE payments (
     notes TEXT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 
-    FOREIGN KEY (debt_id) REFERENCES debts(debt_id),
-    FOREIGN KEY (paid_by) REFERENCES users(user_id),
+    FOREIGN KEY (debt_id) REFERENCES finances.debts(debt_id),
+    FOREIGN KEY (paid_by) REFERENCES finances.users(user_id),
 
     INDEX idx_debt (debt_id),
     INDEX idx_paid_by (paid_by),
